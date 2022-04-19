@@ -96,6 +96,7 @@ resource "azurerm_network_interface_security_group_association" "catapp-nic-sg-a
 
 resource "azurerm_public_ip" "catapp-pip" {
   name                = "${var.prefix}-ip"
+  tags                = { department = "devops" } 
   location            = var.location
   resource_group_name = azurerm_resource_group.myresourcegroup.name
   allocation_method   = "Dynamic"
